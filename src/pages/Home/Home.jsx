@@ -1,11 +1,14 @@
 import { Card, Page } from "@shopify/polaris";
 
 import React from "react";
+import { Sortable } from "../Sortable/Sortable";
 
 const Home = () => {
   return (
     <Page title="Home">
-      <Card sectioned>hello polaris</Card>
+      <Card sectioned>
+        <Sortable handle/>
+      </Card>
     </Page>
   );
 };
