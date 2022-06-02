@@ -41,14 +41,14 @@ const reorder = (list, startIndex, endIndex) => {
 //   );
 // }
 // 拖动 ItemHandle 的效果
+
+// 每一个可拖动单元的复用组件
 function Quote({ quote, index }) {
   return (
     <Draggable draggableId={quote.id} index={index}>
       {(provided) => (
-        <ItemWrap  ref={provided.innerRef} {...provided.draggableProps}>
-          <QuoteItem grid={grid} >
-            {quote.content}
-          </QuoteItem>
+        <ItemWrap ref={provided.innerRef} {...provided.draggableProps}>
+          <QuoteItem grid={grid}>{quote.content}</QuoteItem>
           <ItemHandle grid={grid} {...provided.dragHandleProps} />
         </ItemWrap>
       )}
@@ -56,10 +56,12 @@ function Quote({ quote, index }) {
   );
 }
 
+// 可拖动的表格
 const QuoteList = React.memo(({ quotes }) => {
   return quotes.map((quote, index) => <Quote quote={quote} index={index} key={quote.id} />);
 });
 
+// 拖动上下文组件
 function QuoteApp() {
   const [state, setState] = useState({ quotes: initial });
 
@@ -91,6 +93,7 @@ function QuoteApp() {
   );
 }
 
+// 就是个名字罢了
 const Demo1 = () => {
   return (
     <Page title="react beautiful dnd">
