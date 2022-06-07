@@ -17,24 +17,13 @@ const Home = () => {
     console.log("tabIndex: ", tabIndex);
     switch (tabIndex) {
       case 0:
-        // setIsAlive1(true);
-        // setIsAlive2(false);
-        // setIsAlive3(false);
         keep(setIsAlive1, true);
         break;
       case 1:
-        // setIsAlive1(false);
-        // setIsAlive2(true);
-        // setIsAlive3(false);
         keep(setIsAlive2, true);
-
         break;
       case 2:
-        // setIsAlive1(false);
-        // setIsAlive2(false);
-        // setIsAlive3(true);
         keep(setIsAlive3, true);
-
         break;
       default:
         break;
