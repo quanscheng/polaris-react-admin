@@ -1,5 +1,7 @@
-import "./App.css";
 import "@shopify/polaris/build/esm/styles.css";
+import "antd/dist/antd.min.css";
+// 顺序很重要,否则不能覆盖对应的样式
+import "./App.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
