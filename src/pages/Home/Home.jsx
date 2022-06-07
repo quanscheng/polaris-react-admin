@@ -46,13 +46,13 @@ const Home = () => {
       <Layout>
         <Layout.Section>
           {TabJSX}
-          <KeepAlive alive={isAlive1}>
+          <KeepAlive show={isAlive1}>
             <Card1 />
           </KeepAlive>
-          <KeepAlive alive={isAlive2}>
+          <KeepAlive show={isAlive2}>
             <Card2 />
           </KeepAlive>
-          <KeepAlive alive={isAlive3}>
+          <KeepAlive show={isAlive3}>
             <Card3 />
           </KeepAlive>
         </Layout.Section>

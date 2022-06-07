@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const KeepBox = styled.div`
-  display: ${(props) => (props.alive ? "block" : "none")};
+  display: ${(props) => (props.show ? "block" : "none")};
 `;
 
-export const KeepAlive = ({ children, alive }) => {
-  return <KeepBox alive={alive}>{children}</KeepBox>;
+export const KeepAlive = ({ children, show }) => {
+  return <KeepBox show={show}>{children}</KeepBox>;
 };
