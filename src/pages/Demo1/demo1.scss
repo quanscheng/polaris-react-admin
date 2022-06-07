@@ -1,0 +1,13 @@
+.custom_Segmented {
+  margin-bottom: 16px;
+  .ant-segmented {
+    border-radius: 8px;
+    background-color: transparent;
+    .ant-segmented-group {
+      border-radius: 8px;
+      .ant-segmented-item {
+        border-radius: 8px;
+      }
+    }
+  }
+}
