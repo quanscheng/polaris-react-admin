@@ -1,12 +1,12 @@
+import { Avatar as AntAvatar, ConfigProvider, Tabs } from "antd";
+import { AntTabs, TimelineBox, TimelineDot } from "./styled";
 import { Avatar, Caption, Card, Layout, Page, Stack, TextStyle } from "@shopify/polaris";
 import React, { useEffect, useState } from "react";
-import { TimelineBox, TimelineDot } from "./styled";
 
 import { CollectCard } from "@/components/CollectCard";
 import { KeepAlive } from "@/components/KeepAlive";
 import { OtherInfo } from "@/components/OtherInfo";
 import { TimeLineRemark } from "@/components/TimeLineRemark";
-import { Timeline } from "antd";
 import { useKeepAlive } from "@/hooks/useKeepAlive";
 import { useTabs } from "@/hooks/useTabs";
 
@@ -49,6 +49,53 @@ const Home = () => {
           <KeepAlive show={isAlive3}>
             <Card3 />
           </KeepAlive>
+          <br />
+          <hr />
+          <AntTabs>
+            <Tabs size="middle" type="card">
+              <Tabs.TabPane
+                forceRender={true}
+                tab={
+                  <Stack spacing="tight" alignment="center">
+                    <Stack.Item>
+                      <AntAvatar />
+                    </Stack.Item>
+                    <Stack.Item>
+                      <TextStyle>
+                        instagram <Caption>Bloom zhou</Caption>
+                      </TextStyle>
+                    </Stack.Item>
+                  </Stack>
+                }
+                key="1"
+              >
+                <CollectCard title="infomation22">
+                  <Card.Section>tab 1</Card.Section>
+                </CollectCard>
+              </Tabs.TabPane>
+              <Tabs.TabPane
+                forceRender={true}
+                tab={
+                  <Stack spacing="tight" alignment="center">
+                    <Stack.Item>
+                      <AntAvatar />
+                    </Stack.Item>
+                    <Stack.Item>
+                      <TextStyle>
+                        Facebook <Caption>Bloom zhou</Caption>
+                      </TextStyle>
+                    </Stack.Item>
+                  </Stack>
+                }
+                key="2"
+              >
+                <CollectCard title="infomation22">
+                  <Card.Section>tab 2</Card.Section>
+                  <Card.Section>tab 2</Card.Section>
+                </CollectCard>
+              </Tabs.TabPane>
+            </Tabs>
+          </AntTabs>
         </Layout.Section>
         <Layout.Section secondary>
           {/* Timeline */}

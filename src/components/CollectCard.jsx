@@ -10,6 +10,9 @@ const SvgColor = styled.div`
     fill: rgba(92, 95, 98, 1);
   }
 `;
+const Bottom = styled.div`
+  height: 16px;
+`;
 
 export function CollectCard({ children, title, mountStatus }) {
   const [isUnfold, setIsUnfold] = useState(true);
@@ -36,6 +39,7 @@ export function CollectCard({ children, title, mountStatus }) {
       ]}
     >
       <KeepAlive show={isUnfold}>{children}</KeepAlive>
+      {!isUnfold ? <Bottom /> : null}
     </Card>
   );
 }
