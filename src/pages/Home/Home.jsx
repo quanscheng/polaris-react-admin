@@ -4,6 +4,8 @@ import { TimelineBox, TimelineDot } from "./styled";
 
 import { CollectCard } from "@/components/CollectCard";
 import { KeepAlive } from "@/components/KeepAlive";
+import { OtherInfo } from "@/components/OtherInfo";
+import { TimeLineRemark } from "@/components/TimeLineRemark";
 import { Timeline } from "antd";
 import { useKeepAlive } from "@/hooks/useKeepAlive";
 import { useTabs } from "@/hooks/useTabs";
@@ -49,67 +51,10 @@ const Home = () => {
           </KeepAlive>
         </Layout.Section>
         <Layout.Section secondary>
-          <CollectCard title="Timeline">
-            <Card.Section>
-              <Timeline>
-                <TimelineBox>
-                  <Timeline.Item dot={<TimelineDot />}>
-                    <TextStyle variation="strong">
-                      Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
-                      <Caption>
-                        asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
-                      </Caption>
-                    </TextStyle>
-                  </Timeline.Item>
-                </TimelineBox>
-              </Timeline>
-            </Card.Section>
-          </CollectCard>
-          <CollectCard title="Other information">
-            <Card.Section>
-              <Stack distribution="fillEvenly">
-                <Stack.Item>
-                  <TextStyle variation="subdued">Create by</TextStyle>
-                </Stack.Item>
-                <Stack.Item>
-                  <Stack spacing="extraTight">
-                    <Stack.Item>
-                      <Avatar size="extraSmall" />
-                    </Stack.Item>
-                    <Stack.Item>quansicheng</Stack.Item>
-                  </Stack>
-                </Stack.Item>
-              </Stack>
-              <div style={{ height: 16 }} />
-              <Stack distribution="fillEvenly">
-                <Stack.Item>
-                  <TextStyle variation="subdued">Create time</TextStyle>
-                </Stack.Item>
-                <Stack.Item>2021-08-22 12:45:44</Stack.Item>
-              </Stack>
-              <div style={{ height: 16 }} />
-              <Stack distribution="fillEvenly">
-                <Stack.Item>
-                  <TextStyle variation="subdued">update by</TextStyle>
-                </Stack.Item>
-                <Stack.Item>
-                  <Stack spacing="extraTight">
-                    <Stack.Item>
-                      <Avatar size="extraSmall" />
-                    </Stack.Item>
-                    <Stack.Item>quansicheng</Stack.Item>
-                  </Stack>
-                </Stack.Item>
-              </Stack>
-              <div style={{ height: 16 }} />
-              <Stack distribution="fillEvenly">
-                <Stack.Item>
-                  <TextStyle variation="subdued">Update time</TextStyle>
-                </Stack.Item>
-                <Stack.Item>2021-08-22 12:45:44</Stack.Item>
-              </Stack>
-            </Card.Section>
-          </CollectCard>
+          {/* Timeline */}
+          <TimeLineRemark />
+          {/* Other information */}
+          <OtherInfo />
         </Layout.Section>
       </Layout>
     </Page>
