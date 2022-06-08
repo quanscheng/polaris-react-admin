@@ -1,4 +1,4 @@
-import { Caption, Card, Layout, Page, TextContainer, TextStyle } from "@shopify/polaris";
+import { Avatar, Caption, Card, Layout, Page, Stack, TextStyle } from "@shopify/polaris";
 import React, { useEffect, useState } from "react";
 import { TimelineBox, TimelineDot } from "./styled";
 
@@ -54,37 +54,60 @@ const Home = () => {
               <Timeline>
                 <TimelineBox>
                   <Timeline.Item dot={<TimelineDot />}>
-                    <TextContainer>
-                      <TextStyle variation="strong">
-                        Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
-                        <Caption>
-                          asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
-                        </Caption>
-                      </TextStyle>
-                    </TextContainer>
-                  </Timeline.Item>
-                  <Timeline.Item dot={<TimelineDot />}>
-                    <TextContainer>
-                      <TextStyle variation="strong">
-                        Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
-                        <Caption>
-                          asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
-                        </Caption>
-                      </TextStyle>
-                    </TextContainer>
-                  </Timeline.Item>
-                  <Timeline.Item dot={<TimelineDot />}>
-                    <TextContainer>
-                      <TextStyle variation="strong">
-                        Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
-                        <Caption>
-                          asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
-                        </Caption>
-                      </TextStyle>
-                    </TextContainer>
+                    <TextStyle variation="strong">
+                      Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
+                      <Caption>
+                        asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
+                      </Caption>
+                    </TextStyle>
                   </Timeline.Item>
                 </TimelineBox>
               </Timeline>
+            </Card.Section>
+          </CollectCard>
+          <CollectCard title="Other information">
+            <Card.Section>
+              <Stack distribution="fillEvenly">
+                <Stack.Item>
+                  <TextStyle variation="subdued">Create by</TextStyle>
+                </Stack.Item>
+                <Stack.Item>
+                  <Stack spacing="extraTight">
+                    <Stack.Item>
+                      <Avatar size="extraSmall" />
+                    </Stack.Item>
+                    <Stack.Item>quansicheng</Stack.Item>
+                  </Stack>
+                </Stack.Item>
+              </Stack>
+              <div style={{ height: 16 }} />
+              <Stack distribution="fillEvenly">
+                <Stack.Item>
+                  <TextStyle variation="subdued">Create time</TextStyle>
+                </Stack.Item>
+                <Stack.Item>2021-08-22 12:45:44</Stack.Item>
+              </Stack>
+              <div style={{ height: 16 }} />
+              <Stack distribution="fillEvenly">
+                <Stack.Item>
+                  <TextStyle variation="subdued">update by</TextStyle>
+                </Stack.Item>
+                <Stack.Item>
+                  <Stack spacing="extraTight">
+                    <Stack.Item>
+                      <Avatar size="extraSmall" />
+                    </Stack.Item>
+                    <Stack.Item>quansicheng</Stack.Item>
+                  </Stack>
+                </Stack.Item>
+              </Stack>
+              <div style={{ height: 16 }} />
+              <Stack distribution="fillEvenly">
+                <Stack.Item>
+                  <TextStyle variation="subdued">Update time</TextStyle>
+                </Stack.Item>
+                <Stack.Item>2021-08-22 12:45:44</Stack.Item>
+              </Stack>
             </Card.Section>
           </CollectCard>
         </Layout.Section>
