@@ -1,7 +1,10 @@
-import { Card, Layout, Page } from "@shopify/polaris";
+import { Caption, Card, Layout, Page, TextContainer, TextStyle } from "@shopify/polaris";
 import React, { useEffect, useState } from "react";
+import { TimelineBox, TimelineDot } from "./styled";
 
+import { CollectCard } from "@/components/CollectCard";
 import { KeepAlive } from "@/components/KeepAlive";
+import { Timeline } from "antd";
 import { useKeepAlive } from "@/hooks/useKeepAlive";
 import { useTabs } from "@/hooks/useTabs";
 
@@ -44,6 +47,46 @@ const Home = () => {
           <KeepAlive show={isAlive3}>
             <Card3 />
           </KeepAlive>
+        </Layout.Section>
+        <Layout.Section secondary>
+          <CollectCard title="Timeline">
+            <Card.Section>
+              <Timeline>
+                <TimelineBox>
+                  <Timeline.Item dot={<TimelineDot />}>
+                    <TextContainer>
+                      <TextStyle variation="strong">
+                        Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
+                        <Caption>
+                          asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
+                        </Caption>
+                      </TextStyle>
+                    </TextContainer>
+                  </Timeline.Item>
+                  <Timeline.Item dot={<TimelineDot />}>
+                    <TextContainer>
+                      <TextStyle variation="strong">
+                        Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
+                        <Caption>
+                          asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
+                        </Caption>
+                      </TextStyle>
+                    </TextContainer>
+                  </Timeline.Item>
+                  <Timeline.Item dot={<TimelineDot />}>
+                    <TextContainer>
+                      <TextStyle variation="strong">
+                        Hongyuan &nbsp;<TextStyle variation="subdued">2022-06-07</TextStyle>
+                        <Caption>
+                          asd q a das asas asd dasd 阿萨德asd asd sd q a das asas asd das
+                        </Caption>
+                      </TextStyle>
+                    </TextContainer>
+                  </Timeline.Item>
+                </TimelineBox>
+              </Timeline>
+            </Card.Section>
+          </CollectCard>
         </Layout.Section>
       </Layout>
     </Page>
