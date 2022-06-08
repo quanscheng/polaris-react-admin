@@ -1,9 +1,9 @@
 import "./demo1.scss";
 
 import { Avatar, Segmented } from "antd";
-import { Button, Caption, Card, Layout, Page, Stack, TextStyle } from "@shopify/polaris";
+import { Button, Caption, Card, Icon, Layout, Page, Stack, TextStyle } from "@shopify/polaris";
 import { ChevronDownMinor, ChevronUpMinor } from "@shopify/polaris-icons";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { KeepAlive } from "@/components/KeepAlive";
 import { useToggle } from "ahooks";
@@ -56,7 +56,7 @@ const Demo1 = () => {
       value: "3",
     },
   ]);
-
+  // const [mountFold, setMountFold] = useState(false);
   return (
     <Page title="demo 1">
       <Layout>
@@ -75,14 +75,9 @@ const Demo1 = () => {
             actions={[
               {
                 content: (
-                  <Button
-                    size="slim"
-                    monochrome
-                    plain
-                    icon={changeDemo ? ChevronDownMinor : ChevronUpMinor}
-                    onClick={toggle}
-                  />
+                  <Icon color="base" source={changeDemo ? ChevronDownMinor : ChevronUpMinor} />
                 ),
+                onAction: toggle,
               },
             ]}
           >
@@ -90,10 +85,42 @@ const Demo1 = () => {
               <Card.Section>内容区</Card.Section>
             </KeepAlive>
           </Card>
+          <CollectCard
+            title="组件化"
+            // mountStatus={mountFold} // state
+            mountStatus={false}
+          >
+            内容区
+          </CollectCard>
         </Layout.Section>
       </Layout>
     </Page>
   );
 };
+
+function CollectCard({ children, title, mountStatus }) {
+  const [isUnfold, setIsUnfold] = useState(true);
+  const toggle = useCallback(() => setIsUnfold((boo) => !boo), []);
+
+  useEffect(() => {
+    if (typeof mountStatus !== "undefined") {
+      setIsUnfold(mountStatus);
+    }
+  }, [mountStatus]);
+
+  return (
+    <Card
+      title={title}
+      actions={[
+        {
+          content: <Icon color="base" source={isUnfold ? ChevronDownMinor : ChevronUpMinor} />,
+          onAction: toggle,
+        },
+      ]}
+    >
+      <KeepAlive show={isUnfold}>{children}</KeepAlive>
+    </Card>
+  );
+}
 
 export default Demo1;
