@@ -31,7 +31,7 @@ const Home = () => {
     // eslint-disable-next-line
   }, [tabIndex]);
   return (
-    <Page title="Home">
+    <Page title="KeepAlive组件化实现">
       <Layout>
         <Layout.Section>
           {TabJSX}

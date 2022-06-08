@@ -5,6 +5,7 @@ import { Button, Caption, Card, Icon, Layout, Page, Stack, TextStyle } from "@sh
 import { ChevronDownMinor, ChevronUpMinor } from "@shopify/polaris-icons";
 import React, { useCallback, useEffect, useState } from "react";
 
+import { CollectCard } from "@/components/CollectCard";
 import { KeepAlive } from "@/components/KeepAlive";
 import { useToggle } from "ahooks";
 
@@ -58,7 +59,7 @@ const Demo1 = () => {
   ]);
   // const [mountFold, setMountFold] = useState(false);
   return (
-    <Page title="demo 1">
+    <Page title="收缩卡片+分段控制器">
       <Layout>
         <Layout.Section>
           <div className="custom_Segmented">
@@ -97,30 +98,5 @@ const Demo1 = () => {
     </Page>
   );
 };
-
-function CollectCard({ children, title, mountStatus }) {
-  const [isUnfold, setIsUnfold] = useState(true);
-  const toggle = useCallback(() => setIsUnfold((boo) => !boo), []);
-
-  useEffect(() => {
-    if (typeof mountStatus !== "undefined") {
-      setIsUnfold(mountStatus);
-    }
-  }, [mountStatus]);
-
-  return (
-    <Card
-      title={title}
-      actions={[
-        {
-          content: <Icon color="base" source={isUnfold ? ChevronDownMinor : ChevronUpMinor} />,
-          onAction: toggle,
-        },
-      ]}
-    >
-      <KeepAlive show={isUnfold}>{children}</KeepAlive>
-    </Card>
-  );
-}
 
 export default Demo1;

@@ -19,14 +19,14 @@ export const LeftBar = () => {
   const left_menu = [
     {
       url: ur.home,
-      label: "Home",
+      label: "KeepAlive组件化实现",
       icon: CustomersMajor,
       exactMatch: true,
       // badge: '15',
       subNavigationItems: [
         {
           url: ur.partners,
-          label: "All partners",
+          label: "收缩卡片+分段控制器",
           // exactMatch: true, // 不加所有子路由都会让改标签处于选中状态
         },
         {

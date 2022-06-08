@@ -3,6 +3,13 @@ import { ChevronDownMinor, ChevronUpMinor } from "@shopify/polaris-icons";
 import { useCallback, useEffect, useState } from "react";
 
 import { KeepAlive } from "./KeepAlive";
+import styled from "styled-components";
+
+const SvgColor = styled.div`
+  > span > svg {
+    fill: rgba(92, 95, 98, 1);
+  }
+`;
 
 export function CollectCard({ children, title, mountStatus }) {
   const [isUnfold, setIsUnfold] = useState(true);
@@ -19,7 +26,11 @@ export function CollectCard({ children, title, mountStatus }) {
       title={title}
       actions={[
         {
-          content: <Icon source={isUnfold ? ChevronDownMinor : ChevronUpMinor} />,
+          content: (
+            <SvgColor>
+              <Icon source={isUnfold ? ChevronDownMinor : ChevronUpMinor} />
+            </SvgColor>
+          ),
           onAction: toggle,
         },
       ]}
