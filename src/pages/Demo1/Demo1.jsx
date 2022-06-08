@@ -1,8 +1,12 @@
 import "./demo1.scss";
 
 import { Avatar, Segmented } from "antd";
-import { Caption, Card, Layout, Page, Stack, TextStyle } from "@shopify/polaris";
+import { Button, Caption, Card, Layout, Page, Stack, TextStyle } from "@shopify/polaris";
+import { ChevronDownMinor, ChevronUpMinor } from "@shopify/polaris-icons";
 import React, { useState } from "react";
+
+import { KeepAlive } from "@/components/KeepAlive";
+import { useToggle } from "ahooks";
 
 const SegmentedItem = ({ imgsrc = "", title = "", info = "" }) => {
   return (
@@ -27,6 +31,7 @@ const SegmentedItem = ({ imgsrc = "", title = "", info = "" }) => {
 };
 
 const Demo1 = () => {
+  const [changeDemo, { toggle }] = useToggle();
   const [options, setOptions] = useState([
     {
       label: (
@@ -65,7 +70,26 @@ const Demo1 = () => {
               }}
             />
           </div>
-          <Card sectioned>111</Card>
+          <Card
+            title="title"
+            actions={[
+              {
+                content: (
+                  <Button
+                    size="slim"
+                    monochrome
+                    plain
+                    icon={changeDemo ? ChevronDownMinor : ChevronUpMinor}
+                    onClick={toggle}
+                  />
+                ),
+              },
+            ]}
+          >
+            <KeepAlive show={changeDemo}>
+              <Card.Section>内容区</Card.Section>
+            </KeepAlive>
+          </Card>
         </Layout.Section>
       </Layout>
     </Page>
