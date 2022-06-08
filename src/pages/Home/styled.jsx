@@ -15,7 +15,7 @@ export const TimelineDot = styled.div`
 
 export const AntTabs = styled.div`
   /* 去除下边框 */
-  > .ant-tabs .ant-tabs-top > .ant-tabs-nav:before {
+  > .ant-tabs .ant-tabs-nav::before {
     border: none;
   }
   /* 选中和未选中的 tab.pane 样式 */
@@ -26,12 +26,7 @@ export const AntTabs = styled.div`
     }
     /* 选中的 tab.pane 样式 */
     .ant-tabs-tab-active {
-      background-color: white;
       font-weight: bold;
-      .Polaris-Stack__Item span,
-      .Polaris-Caption {
-        /* color: black; */
-      }
     }
   }
 `;
