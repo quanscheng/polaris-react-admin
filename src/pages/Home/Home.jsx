@@ -52,13 +52,16 @@ const Home = () => {
           <br />
           <hr />
           <AntTabs>
-            <Tabs size="middle" type="card">
+            <Tabs
+              size="middle"
+              // type="card"
+            >
               <Tabs.TabPane
                 forceRender={true}
                 tab={
                   <Stack spacing="tight" alignment="center">
                     <Stack.Item>
-                      <AntAvatar />
+                      <AntAvatar src="https://joeschmoe.io/api/v1/random" />
                     </Stack.Item>
                     <Stack.Item>
                       <TextStyle>
@@ -78,7 +81,7 @@ const Home = () => {
                 tab={
                   <Stack spacing="tight" alignment="center">
                     <Stack.Item>
-                      <AntAvatar />
+                      <AntAvatar src="https://joeschmoe.io/api/v1/random" />
                     </Stack.Item>
                     <Stack.Item>
                       <TextStyle>

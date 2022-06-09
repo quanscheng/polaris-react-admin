@@ -28,5 +28,10 @@ export const AntTabs = styled.div`
     .ant-tabs-tab-active {
       font-weight: bold;
     }
+    .ant-tabs-ink-bar {
+      height: 3px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
   }
 `;
