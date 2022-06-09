@@ -54,7 +54,7 @@ const Home = () => {
           <AntTabs>
             <Tabs
               size="middle"
-              // type="card"
+              type="card"
             >
               <Tabs.TabPane
                 forceRender={true}

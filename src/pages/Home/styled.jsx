@@ -7,8 +7,8 @@ export const TimelineBox = styled.div`
 `;
 
 export const TimelineDot = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   background-color: rgba(0, 160, 172, 1);
   border-radius: 50%;
 `;
